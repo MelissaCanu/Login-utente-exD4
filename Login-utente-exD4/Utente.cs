@@ -34,7 +34,7 @@ namespace Login_utente_exD4
         {
             if (Username == null || Password == null)
             {
-                Console.WriteLine("===============Errore, utente non loggato");
+             
                 return false;
             }
             else
@@ -50,7 +50,7 @@ namespace Login_utente_exD4
         {
             if (Username == null || Password == null)
             {
-                Console.WriteLine("===============Errore, utente non loggato");
+               
                 return null;
             }
             else
@@ -62,21 +62,40 @@ namespace Login_utente_exD4
         }
 
         // metodo statico list con nessun parametro e valore di ritorno stringa, lista dei login dell'utente
-        public static List<string> LoginHistory() 
+        private static List<string> loginHistory = new List<string>(); // Dichiarazione della lista di login
+
+        // modificato per aggiungere login alla lista invece di crearne una nuova ogni volta
+        public static List<string> LoginHistory()
         {
-            List<string> lista = new List<string>(); // dichiarazione lista di stringhe
-            if (Username == null || Password == null) 
+            if (Username == null || Password == null)
             {
-                Console.WriteLine("===============Errore, utente non loggato");
+               
                 return null;
             }
             else
             {
-                lista.Add(LastLogin()); // aggiunta data e ora login alla lista
-                return lista; 
+                string loginTime = LastLogin();
+                loginHistory.Add(loginTime);
+                return loginHistory;
             }
         }
 
-        
+        // metodo statico list con nessun parametro e valore di ritorno stringa, lista dei login dell'utente
+        //public static List<string> LoginHistory()
+        //{
+        //    List<string> lista = new List<string>(); // dichiarazione lista di stringhe
+        //    if (Username == null || Password == null)
+        //    {
+        //       
+        //        return null;
+        //    }
+        //    else
+        //    {
+        //        lista.Add(LastLogin()); // aggiunta data e ora login alla lista
+        //        return lista;
+        ////    }
+        //}
+
+
     }
 }

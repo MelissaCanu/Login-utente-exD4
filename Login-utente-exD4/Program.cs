@@ -19,6 +19,7 @@ namespace Login_utente_exD4
             bool logout = false;
             DateTime lastLogin = DateTime.MinValue; // valore di default di un DateTime 
             bool exit = false; // variabile booleana per uscire dal ciclo do-while
+
             do // ciclo do-while per il menu
             {
                 Console.WriteLine("===============OPERAZIONI==============\r\n"); 
@@ -42,11 +43,11 @@ namespace Login_utente_exD4
                         login = Utente.Login(username, password, confermaPassword); // chiamata al metodo statico Login
                         if (login == true)
                         {
-                            Console.WriteLine("===============Login effettuato");
+                            Console.WriteLine("===============Login effettuato! Benvenut* " + username);
                         }
                         else
                         {
-                            Console.WriteLine("===============Errore, login non effettuato");
+                            Console.WriteLine("===============Errore, le password non coincidono");
                         }
                         break;
 
