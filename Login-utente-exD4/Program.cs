@@ -24,7 +24,8 @@ namespace Login_utente_exD4
                 Console.WriteLine("1. Login");
                 Console.WriteLine("2. Logout");
                 Console.WriteLine("3. Last Login");
-                Console.WriteLine("4. Exit");
+                Console.WriteLine("4. Storico Login");
+                Console.WriteLine("5. Exit");
                 scelta = Console.ReadLine();
                 switch (scelta) // switch per le scelte del menu
                 {
@@ -45,6 +46,7 @@ namespace Login_utente_exD4
                             Console.WriteLine("Errore, login non effettuato");
                         }
                         break;
+
                     case "2":
                         logout = Utente.Logout(); // chiamata al metodo statico Logout
                         if (logout == true)
@@ -56,20 +58,38 @@ namespace Login_utente_exD4
                             Console.WriteLine("Errore, logout non effettuato");
                         }
                         break;
+
                     case "3":
-                        if (logout == false)
+                        if (login == true)
                         {
-                            Console.WriteLine("Ultimo login effettuato: " + Utente.LastLogin());
+                            Console.WriteLine("Ultimo login effettuato: " + Utente.LastLogin()); // chiamata al metodo statico LastLogin
                         }
                         else
                         {
                             Console.WriteLine("Errore, utente non loggato");
                         }
 
-                        // chiamata al metodo statico LastLogin
-
                         break;
-                    case "4": // uscita dal ciclo do-while
+
+                    case "4": // stampa lista login effettuati
+                            if (login == true)
+                        {
+                            List<string> lista = Utente.LoginHistory(); // chiamata al metodo statico LoginHistory
+                            if (lista != null)
+                            {
+                                foreach (string loginEffettuato in lista) 
+                                {
+                                    Console.WriteLine(loginEffettuato);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            Console.WriteLine("Errore, utente non loggato");
+                        }
+                        break;
+
+                    case "5": // uscita dal ciclo do-while
                         exit = true;
                         break;
                     default:

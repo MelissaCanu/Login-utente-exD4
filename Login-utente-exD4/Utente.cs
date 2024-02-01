@@ -65,15 +65,15 @@ namespace Login_utente_exD4
         public static List<string> LoginHistory() 
         {
             List<string> lista = new List<string>(); // dichiarazione lista di stringhe
-            if (Username == null || Password == null)
+            if (Username == null || Password == null) 
             {
                 Console.WriteLine("Errore, utente non loggato");
                 return null;
             }
             else
             {
-                lista.Add(LastLogin());
-                return lista;
+                lista.Add(LastLogin()); // aggiunta data e ora login alla lista
+                return lista; 
             }
         }
 
