@@ -11,7 +11,7 @@ namespace Login_utente_exD4
         public static string Username { get; set; }
         public static string Password { get; set; }
 
-        // metodo statico con tre parametri di tipo stringa e valore di ritorno booleano
+        // metodo statico login con tre parametri di tipo stringa e valore di ritorno booleano
         public static bool Login(string username, string password, string ConfermaPassword)
         { 
         if (username == "" || password == "" || ConfermaPassword == "")
@@ -34,7 +34,7 @@ namespace Login_utente_exD4
         {
             if (Username == null || Password == null)
             {
-                Console.WriteLine("Errore, utente non loggato");
+                Console.WriteLine("===============Errore, utente non loggato");
                 return false;
             }
             else
@@ -50,7 +50,7 @@ namespace Login_utente_exD4
         {
             if (Username == null || Password == null)
             {
-                Console.WriteLine("Errore, utente non loggato");
+                Console.WriteLine("===============Errore, utente non loggato");
                 return null;
             }
             else
@@ -61,13 +61,13 @@ namespace Login_utente_exD4
             }
         }
 
-        // metodo statico  con nessun parametro e valore di ritorno stringa, lista dei login dell'utente
+        // metodo statico list con nessun parametro e valore di ritorno stringa, lista dei login dell'utente
         public static List<string> LoginHistory() 
         {
             List<string> lista = new List<string>(); // dichiarazione lista di stringhe
             if (Username == null || Password == null) 
             {
-                Console.WriteLine("Errore, utente non loggato");
+                Console.WriteLine("===============Errore, utente non loggato");
                 return null;
             }
             else

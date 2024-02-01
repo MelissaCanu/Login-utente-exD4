@@ -42,11 +42,11 @@ namespace Login_utente_exD4
                         login = Utente.Login(username, password, confermaPassword); // chiamata al metodo statico Login
                         if (login == true)
                         {
-                            Console.WriteLine("Login effettuato");
+                            Console.WriteLine("===============Login effettuato");
                         }
                         else
                         {
-                            Console.WriteLine("Errore, login non effettuato");
+                            Console.WriteLine("===============Errore, login non effettuato");
                         }
                         break;
 
@@ -54,22 +54,22 @@ namespace Login_utente_exD4
                         logout = Utente.Logout(); // chiamata al metodo statico Logout
                         if (logout == true)
                         {
-                            Console.WriteLine("Logout effettuato");
+                            Console.WriteLine("===============Logout effettuato");
                         }
                         else
                         {
-                            Console.WriteLine("Errore, logout non effettuato");
+                            Console.WriteLine("===============Errore, logout non effettuato");
                         }
                         break;
 
                     case "3":
                         if (login == true)
                         {
-                            Console.WriteLine("Ultimo login effettuato: " + Utente.LastLogin()); // chiamata al metodo statico LastLogin
+                            Console.WriteLine("===============Ultimo login effettuato: " + Utente.LastLogin()); // chiamata al metodo statico LastLogin
                         }
                         else
                         {
-                            Console.WriteLine("Errore, utente non loggato");
+                            Console.WriteLine("===============Errore, utente non loggato");
                         }
 
                         break;
@@ -82,13 +82,13 @@ namespace Login_utente_exD4
                             {
                                 foreach (string loginEffettuato in lista) 
                                 {
-                                    Console.WriteLine(loginEffettuato);
+                                    Console.WriteLine("===============" + loginEffettuato);
                                 }
                             }
                         }
                         else
                         {
-                            Console.WriteLine("Errore, utente non loggato");
+                            Console.WriteLine("===============Errore, utente non loggato");
                         }
                         break;
 
@@ -96,7 +96,7 @@ namespace Login_utente_exD4
                         exit = true;
                         break;
                     default:
-                        Console.WriteLine("Scelta non valida");
+                        Console.WriteLine("===============Scelta non valida");
                         break;
                 }
             } while (exit == false);
