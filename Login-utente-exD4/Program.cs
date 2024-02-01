@@ -21,11 +21,14 @@ namespace Login_utente_exD4
             bool exit = false; // variabile booleana per uscire dal ciclo do-while
             do // ciclo do-while per il menu
             {
+                Console.WriteLine("===============OPERAZIONI==============\r\n"); 
+                Console.WriteLine("Scegli l'operazione da effettuare:\r\n"); 
                 Console.WriteLine("1. Login");
                 Console.WriteLine("2. Logout");
                 Console.WriteLine("3. Last Login");
                 Console.WriteLine("4. Storico Login");
                 Console.WriteLine("5. Exit");
+                Console.WriteLine("========================================");
                 scelta = Console.ReadLine();
                 switch (scelta) // switch per le scelte del menu
                 {
